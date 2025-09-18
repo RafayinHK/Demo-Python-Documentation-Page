@@ -1,0 +1,146 @@
+<!Doctype html>
+<html lang='en'>
+  <head>
+    <link rel='stylesheet' href='styles.css'>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Python Documentation</title>
+  </head>
+  <body>
+  <main id='main-doc'>
+    <div class='navigation'>
+      <nav id='navbar'>
+        <header>🐍 Python Documentation</header>
+        <ul>
+          <li><a class="nav-link" href="#introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#python_&_java">Python & Java</a></li>
+          <li><a class="nav-link" href='#hello_world'>Hello World</a></li>
+          <li><a class="nav-link" href='#variables'>Variables</a></li>
+          <li><a class="nav-link" href='#data_types'>Data Types</a></li>
+          <li><a class="nav-link" href='#control_structures'>Control Structures</a></li>
+          <li><a class="nav-link" href='#function_declarations'>Function Declarations</a></li>
+          <li><a class="nav-link" href='#reference'>Reference</a></li>
+        </ul>
+      </nav>
+    </div>
+  <div class='doc'>
+    <section role='region' aria-labelledby='introduction' class='main-section' id='introduction'>
+      <header>Introduction</header>
+      <p><b>What you should already know</b></p>
+      <p>This guide assumes you have the following basic background:</p>
+      <ul>
+        <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+        <li>Some programming experience. If you are new to programming, try one of the tutorials linked on the main page about Python.</li>
+      </ul>
+    </section>
+
+    <section role='region' aria-labelledby='python-&-java' class='main-section' id='python_&_java'>
+      <header>Python & Java</header>
+      <p>Python and Java are both widely used programming languages, but they have some fundamental differences. Python is an interpreted, high-level, general-purpose programming language. It emphasizes code readability with its notable use of significant indentation. Python is dynamically typed, meaning you don't need to declare a variable's type, unlike Java's static typing. This allows for a more flexible and faster development process.</p>
+      
+      <p>In contrast to Java's compile-time system of classes, Python is often run directly by an interpreter. Python's object model is class-based, but its syntax is much more streamlined. Python also supports functions as first-class objects, meaning they can be assigned to variables, passed as arguments, or returned from other functions.</p>
+      
+      <p>Python is a very free-form language compared to Java. You don't have to declare all variables, classes, and methods. You don't have to be concerned with whether methods are public, private, or protected, and you don't have to implement interfaces</p>
+    </section>
+
+    <section role="region" aria-labelledby='hello-world' class='main-section' id='hello_world'>
+      <header>Hello World</header>
+      <p>To get started with writing Python, open a text editor and write your first "Hello World" code:</p>
+      <pre><code>def greet_me(your_name):
+  print("Hello " + your_name)
+
+greet_me("World")
+</code></pre>
+    <p>Save the file as <span class='greyed'>hello.py</span> and run it from your terminal:  <span class='greyed'>python hello.py</span>.</p>
+    </section>
+
+    <section role="region" aria-labelledby='variables' class='main-section' id='variables'>
+      <header>Variables</header>
+      <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
+      <p>A Python identifier must start with a letter (A-Z, a-z) or an underscore (<span class='greyed'>_</span>). Subsequent characters can also be digits (<span class='greyed'>0-9</span>). Because Python is case-sensitive, <span class='greyed'>myVar</span> is not the same as <span class='greyed'>myvar</span>.</p>
+
+      <h3>Declaring Variables</h3>
+      <p>In Python, you declare a variable by simply assigning it a value. For example, <span class='greyed'>x = 42</span>. Python is a dynamically typed language, so you don't need to specify the data type of the variable when you declare it.</p>
+
+      <h3>Variable Scope</h3>
+      <p>When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current module. When you declare a variable within a function, it is called a local variable, because it is available only within that function.</p>
+      <pre><code># A global variable
+message = "This is a global message"
+
+def my_function():
+  # A local variable
+  local_message = "This is a local message"
+  print(local_message)
+
+print(message)
+# This will cause an error: print(local_message)
+</code></pre>
+
+    <p>To modify a global variable from within a function, you must use the <span class='greyed'>global</span> keyword.</p>
+
+    </section>
+
+    <section role="region" aria-labelledby='data-types' class='main-section' id='data_types'>
+      <header>Data Types</header>
+      <p>Python has several built-in data types:</p>
+      <ul>
+        <li>Numeric Types: <span class='greyed'>int, float, complex.</span></li>
+        <li>String Type: <span class='greyed'>str</span>.</li>
+        <li>Sequence Types: <span class='greyed'>list, tuple, range.</span></li>
+        <li>Mapping Type: <span class='greyed'>dict.</span></li>
+        <li>Set Types: <span class='greyed'>set, frozenset.</span></li>
+        <li>Boolean Type: <span class='greyed'>bool.</span></li>
+        <li>Binary Types: <span class='greyed'>bytes, bytearray, memoryview.</span></li>
+      </ul>
+    </section>
+
+    <section role="region" aria-labelledby='control-structures' class='main-section' id='control_structures'>
+      <header>Control Structures</header>
+      <h3>if...else statement</h3>
+      <p>Use the if statement to execute a block of code if a condition is true.</p><p>Use the optional else clause to execute another block of code if the condition is false.</p>
+
+      <pre><code>if condition:
+  statement_1
+else:
+  statement_2
+      </code></pre>
+      <p><span class='greyed'>condition</span> can be any expression that evaluates to True or False. You may also use <span class='greyed'>elif</span> to check multiple conditions in sequence.</p>
+
+      <h3>while statements</h3>
+      <p>A while loop executes its statements as long as a specified condition evaluates to True.</p>
+      <pre><code>i = 1
+while i < 6:
+  print(i)
+  i += 1
+
+      </code></pre>
+      <p>If the condition becomes False, the loop stops executing.</p>
+    </section>
+
+    <section role="region" aria-labelledby='function-declarations' class='main-section' id='function_declarations'>
+      <header>Function Declarations</header>
+      <p>A function definition consists of the def keyword, followed by:</p>
+      <ul>
+        <li>The name of the function.</li>
+        <li>A list of arguments to the function, enclosed in parentheses.</li>
+        <li>The Python statements that define the function, which are indented.</li>
+      </ul>
+      <p>For example, the following code defines a simple function named square:</p>
+      <pre><code>def square(number):
+  return number * number
+      </code></pre>
+
+      <p>The function square takes one argument, number. The function consists of one statement that says to return the argument multiplied by itself.</p> <p>The return statement specifies the value returned by the function.</p>
+    </section>
+
+    <section role="region" aria-labelledby='reference' class='main-section' id='reference'>
+      <header>Reference</header>
+      <p>All the documentation in this page is based on the [Official Python Documentation].</p>
+    </section>
+
+  </div>
+    
+  </main>
+
+  </body>
+</html>
